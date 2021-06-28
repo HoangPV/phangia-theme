@@ -1,15 +1,59 @@
 <!doctype html>
-<!--[if lt IE 9]><html class="no-js no-svg ie lt-ie9 lt-ie8 lt-ie7" {{ site.language_attributes }}> <![endif]-->
-<!--[if IE 9]><html class="no-js no-svg ie ie9 lt-ie9 lt-ie8" {{ site.language_attributes }}> <![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js no-svg" {{ site.language_attributes }}> <!--<![endif]-->
+<!--[if lt IE 9]><html class="no-js no-svg ie lt-ie9 lt-ie8 lt-ie7 {{ html_extra_class }}" {{ site.language_attributes }}> <![endif]-->
+<!--[if IE 9]><html class="no-js no-svg ie ie9 lt-ie9 lt-ie8 {{ html_extra_class }}" {{ site.language_attributes }}> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js no-svg {{ html_extra_class }}" {{ site.language_attributes }}> <!--<![endif]-->
 <head>
     <meta charset="{{ site.charset }}" />
     <meta name="description" content="{{ site.description }}">
     <link rel="stylesheet" href="{{ site.theme.link }}/style.css" type="text/css" media="screen" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="author" href="{{ site.theme.link }}/humans.txt" />
     <link rel="pingback" href="{{ site.pingback_url }}" />
     <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link href="{{ site.theme.link }}/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="{{ site.theme.link }}/images/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="{{ site.theme.link }}/images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="{{ site.theme.link }}/images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+    <link href="{{ site.theme.link }}/images/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+    {#Stylesheet#}
+    <link href="{{ site.theme.link }}/css/bootstrap-rtl.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ site.theme.link }}/css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ site.theme.link }}/css/javascript-plugins-bundle.css" rel="stylesheet">
+
+    {#Css menuzord megamenu skin#}
+    <link href="{{ site.theme.link }}/js/menuzord/css/menuzord.css" rel="stylesheet">
+
+    {#Css timeline#}
+    <link href="{{ site.theme.link }}/js/timeline-cp-responsive-vertical/timeline-cp-responsive-vertical.css" rel="stylesheet" type="text/css">
+
+    {#Css main style file#}
+    <link href="{{ site.theme.link }}/css/style-main.css" rel="stylesheet" type="text/css">
+
+    <link id="menuzord-menu-skins" href="{{ site.theme.link }}/js/menuzord/css/skins/menuzord-rounded-boxed.css" rel="stylesheet">
+
+    {#Css responsive media queries#}
+    <link href="{{ site.theme.link }}/css/responsive.css" rel="stylesheet" type="text/css">
+
+    {#Css custom css#}
+
+    {#Css theme color#}
+    <link rel="stylesheet" href="{{ site.theme.link }}/css/colors/theme-skin-color-set1.css" type="text/css">
+
+    {#External javascripts#}
+    <script src="{{ site.theme.link }}/js/jquery.js"></script>
+    <script src="{{ site.theme.link }}/js/bootstrap.min.js"></script>
+    <script src="{{ site.theme.link }}/js/javascript-plugins-bundle.js"></script>
+    <script src="{{ site.theme.link }}/js/menuzord/js/menuzord.js"></script>
+
+    {#Revolution stylesheet#}
+    <link rel="stylesheet" type="text/css" href="{{ site.theme.link }}/js/revolution-slider/css/rs6.css">
+    <link rel="stylesheet" type="text/css" href="{{ site.theme.link }}/js/revolution-slider/extra-rev-slider1.css">
+
+    {#Revolution js files#}
+    <script type="text/javascript" src="{{ site.theme.link }}/js/revolution-slider/js/revolution.tools.min.js"></script>
+    <script type="text/javascript" src="{{ site.theme.link }}/js/revolution-slider/js/rs6.min.js"></script>
+    <script src="{{ site.theme.link }}/js/revolution-slider/extra-rev-slider1.js"></script>
+
     {{function('wp_head')}}

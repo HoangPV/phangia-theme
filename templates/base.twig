@@ -7,19 +7,144 @@
 {% endblock %}
 
 	<body class="{{body_class}}" data-template="base.twig">
-		<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
-		<header class="header" >
-			{% block header %}
-				<div class="wrapper">
-					<h1 class="hdr-logo" role="banner">
-						<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
-					</h1>
-					<nav id="nav-main" class="nav-main" role="navigation">
-						{% include "menu.twig" with {'items': menu.get_items} %}
-					</nav><!-- #nav -->
+
+
+		{#Preloader#}
+		<div id="preloader">
+			<div id="spinner">
+				<div class="preloader-dot-loading">
+					<div class="cssload-loading"><i></i><i></i><i></i><i></i></div>
 				</div>
-			{% endblock %}
-		</header>
+			</div>
+			<div id="disable-preloader" class="btn btn-default btn-sm">Disable Preloader</div>
+		</div>
+
+		<div class="side-panel-body-overlay"></div>
+		<div id="side-panel-container" class="dark" data-tm-bg-img="{{ site.theme.link }}/images/side-push-bg.jpg">
+			<div class="side-panel-wrap">
+				<div id="side-panel-trigger-close" class="side-panel-trigger"><a href="#"><i class="fa fa-times side-panel-trigger-icon"></i></a></div>
+			</div>
+			<img class="logo mb-50" src="{{ site.theme.link }}/images/logo-wide.png" alt="Logo">
+			<p>Lorem ipsum is simply free text dolor sit am adipi we help you ensure everyone is in the right jobs sicing elit, sed do consulting firms Et leggings across the nation tempor.</p>
+			<div class="widget">
+				<h4 class="widget-title widget-title-line-bottom line-bottom-theme-colored1">Latest News</h4>
+				<div class="latest-posts">
+					<article class="post media-post clearfix [b-0 mb-10">
+						<a class="post-thumb" href="#"><img src="http://placehold.it/95x95" alt=""></a>
+						<div class="post-right">
+							<h5 class="post-title mt-0"><a href="#">Sustainable Construction</a></h5>
+							<p>Lorem ipsum dolor...</p>
+						</div>
+					</article>
+					<article class="post media-post clearfix [b-0 mb-10">
+						<a class="post-thumb" href="#"><img src="http://placehold.it/95x95" alt=""></a>
+						<div class="post-right">
+							<h5 class="post-title mt-0"><a href="#">Industrial Coatings</a></h5>
+							<p>Lorem ipsum dolor...</p>
+						</div>
+					</article>
+					<article class="post media-post clearfix [b-0 mb-10">
+						<a class="post-thumb" href="#"><img src="http://placehold.it/95x95" alt=""></a>
+						<div class="post-right">
+							<h5 class="post-title mt-0"><a href="#">Storefront Installations</a></h5>
+							<p>Lorem ipsum dolor...</p>
+						</div>
+					</article>
+				</div>
+			</div>
+			<div class="widget">
+				<h5 class="widget-title widget-title-line-bottom line-bottom-theme-colored1">Contact Info</h5>
+				<div class="tm-widget-contact-info contact-info-style1 contact-icon-theme-colored1">
+					<ul>
+						<li class="contact-name">
+							<div class="icon"><i class="flaticon-contact-037-address"></i></div>
+							<div class="text">John Doe</div>
+						</li>
+						<li class="contact-phone">
+							<div class="icon"><i class="flaticon-contact-042-phone-1"></i></div>
+							<div class="text"><a href="tel:+0917377772">+84-0917377772</a></div>
+						</li>
+						<li class="contact-email">
+							<div class="icon"><i class="flaticon-contact-043-email-1"></i></div>
+							<div class="text"><a href="mailto:phanvuhoang@gmail.com">phanvuhoang@gmail.com</a></div>
+						</li>
+						<li class="contact-address">
+							<div class="icon"><i class="flaticon-contact-047-location"></i></div>
+							<div class="text">Chung cư Sky9, Đường Liên Phường, P Phú Hữu, Quận 9. TP HCM</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div id="wrapper" class="clearfix">
+			{#Header#}
+			<header id="header" class="header header-layout-type-header-2rows" >
+				<div class="header-top">
+					<div class="container">
+						<div class="row">
+							<div class="col-xl-auto header-top-left align-self-center text-center text-xl-left">
+								<ul class="element contact-info">
+									<li class="contact-phone"><i class="fa fa-phone font-icon sm-display-block"></i> Tel: +84 0917377772</li>
+									<li class="contact-email"><i class="fa fa-envelope font-icon sm-display-block"></i> phanvuhoang@gmail.com</li>
+									<li class="contact-address"><i class="fa fa-map font-icon sm-display-block"></i> Chung cư Sky9, Đường Liên Phường, Phường Phú Hữu, Quận 9. TP HCM</li>
+								</ul>
+							</div>
+							<div class="col-xl-auto ml-xl-auto header-top-right align-self-center text-xl-right">
+								<div class="element pt-0 pb-0">
+									<ul class="styled-icons icon-dark icon-theme-colored1 icon-circled clearfix">
+										<li><a class="social-link" href="#"><i class="fab fa-facebook"></i></a></li>
+										<li><a class="social-link" href="#"><i class="fab fa-twitter"></i></a></li>
+										<li><a class="social-link" href="#"><i class="fab fa-youtube"></i></a></li>
+									</ul>
+								</div>
+								<div class="element pt-0 pb-0">
+									<a href="ajax-load/form-appointment.html" class="btn btn-theme-colored2 btn-flat btn-sm ajaxload-popup">Make an Appointment</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="header-nav">
+					<div class="header-nav-wrapper navbar-scrolltofixed">
+						<div class="menuzord-container header-nav-container">
+							<div class="container position-relative">
+								<div class="row header-nav-col-row">
+									<div class="col-sm-auto align-self-center">
+										<a class="menuzord-brand site-brand" href="">
+											<img class="logo-default logo-1x" src="{{ site.theme.link }}/logo-wide.png" alt="logo">
+										</a>
+									</div>
+									<div class="col-sm-auto ml-auto pr-0 align-self-center">
+										<nav id="top-primary-nav" class="menuzord green" data-effect="fade" data-animation="none" data-align="right">
+											<ul id="main-nav" class="menuzord-menu">
+												<li class="active">
+													<a href="#">Home</a>
+
+												</li>
+											</ul>
+										</nav>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				{% block header %}
+					<div class="wrapper">
+						<h1 class="hdr-logo" role="banner">
+							<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
+						</h1>
+						<nav id="nav-main" class="nav-main" role="navigation">
+							{% include "menu.twig" with {'items': menu.get_items} %}
+						</nav><!-- #nav -->
+					</div>
+				{% endblock %}
+			</header>
+		</div>
+
+
 
 		<section id="content" role="main" class="content-wrapper">
 			{% if title %}<h1>{{title}}</h1>{% endif %}

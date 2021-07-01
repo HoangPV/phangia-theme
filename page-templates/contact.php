@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Template Trang chủ
+ * Template Name: Template Liên hệ
  */
 $context = Timber::context();
 
@@ -13,4 +13,4 @@ $context = array_merge($context, [
 	't_settings' => $settings
 ]);
 
-Timber::render( ['page--home.twig'], $context );
+Timber::render( ['page--contact.twig'], $context );

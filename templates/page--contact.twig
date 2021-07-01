@@ -1,0 +1,243 @@
+{% extends "base.twig" %}
+{% block content %}
+    <!-- Start main-content -->
+    <div class="main-content-area">
+        <!-- Section: inner-header Start -->
+        <section class="page-title divider layer-overlay overlay-theme-colored2-8 section-typo-light bg-img-center" data-tm-bg-img="http://placehold.it/1920x1280">
+            <div class="container pt-90 pb-90">
+                <!-- Section Content -->
+                <div class="section-content">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h2 class="title text-white">Contact</h2>
+                            <nav role="navigation" class="breadcrumb-trail breadcrumbs">
+                                <div class="breadcrumbs">
+                  <span class="trail-item trail-begin">
+                    <a href="#"><span>Home</span></a>
+                  </span>
+                                    <span><i class="fa fa-angle-right"></i></span>
+                                    <span class="trail-item"><a href="#"><span>Pages</span></a></span>
+                                    <span><i class="fa fa-angle-right"></i></span>
+                                    <span class="trail-item trail-end text-theme-colored1">Contact</span>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section: inner-header End -->
+
+        <!-- Section: Have Any Question -->
+        <section class="divider">
+            <div class="container pt-60 pb-60">
+                <div class="section-title mb-60">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="esc-heading small-border text-center">
+                                <h3>Have any Questions?</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4">
+                            <div class="icon-box text-center iconbox-theme-colored1 animate-icon-on-hover animate-icon-rotate mb-50">
+                                <div class="icon-box-wrapper">
+                                    <div class="icon-wrapper mb-30">
+                                        <a class="icon icon-type-font-icon icon-lg icon-dark icon-circled"> <i class="flaticon-contact-045-call"></i> </a>
+                                    </div>
+                                    <div class="icon-text">
+                                        <h5 class="icon-box-title mt-0">Phone</h5>
+                                        <div class="content"><a href="tel:+123.456.7890">+123.456.7890</a></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4">
+                            <div class="icon-box text-center iconbox-theme-colored1 animate-icon-on-hover animate-icon-rotate mb-50">
+                                <div class="icon-box-wrapper">
+                                    <div class="icon-wrapper mb-30">
+                                        <a class="icon icon-type-font-icon icon-lg icon-dark icon-circled"> <i class="flaticon-contact-043-email-1"></i> </a>
+                                    </div>
+                                    <div class="icon-text">
+                                        <h5 class="icon-box-title mt-0">Email</h5>
+                                        <div class="content"><a href="mailto:needhelp@yourdomain.com">needhelp@yourdomain.com</a></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4">
+                            <div class="icon-box text-center iconbox-theme-colored1 animate-icon-on-hover animate-icon-rotate mb-50">
+                                <div class="icon-box-wrapper">
+                                    <div class="icon-wrapper mb-30">
+                                        <a class="icon icon-type-font-icon icon-lg icon-dark icon-circled"> <i class="flaticon-contact-025-world"></i> </a>
+                                    </div>
+                                    <div class="icon-text">
+                                        <h5 class="icon-box-title mt-0">Address</h5>
+                                        <div class="content">66 Broklyn Street USA</div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section: Google Map -->
+
+        <section data-tm-bg-img="images/bg/about-bg3.png">
+            <div class="container-fluid p-0 pb-0">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="google-map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7496.556775569473!2d144.95479118909844!3d-37.81548660764023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2sbd!4v1562002563953!5m2!1sen!2sbd" width="2600" height="700" allowfullscreen></iframe>
+                            <div class="call-for-estimate">
+                                <h5 class="number"><span class="font-weight-300">Call for Estimate:</span> 666 888 0000</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section: Contact -->
+
+        <section data-tm-margin-top="-620px">
+            <div class="container pt-20 pb-0">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-xl-5">
+                        <div class="contact-from bg-theme-colored2 mt-lg-60 mb-lg-40">
+                            <h3 class="text-white mt-0 mb-30">Leave a Message</h3>
+                            <!-- Contact Form -->
+                            <form id="contact_form" name="contact_form" class="" action="includes/sendmail.php" method="post">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <input name="form_name" class="form-control" type="text" placeholder="Enter Name" required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <input name="form_email" class="form-control required email" type="email" placeholder="Enter Email">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <input name="form_phone" class="form-control" type="text" placeholder="Enter Phone">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <textarea name="form_message" class="form-control required" rows="6" placeholder="Enter Message"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <input name="form_botcheck" class="form-control" type="hidden" value="" />
+                                            <button type="submit" class="btn btn-round btn-theme-colored1 text-white mt-10 mb-sm-30" data-loading-text="Please wait...">Send a message</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- Contact Form Validation-->
+                            <script type="text/javascript">
+                                (function($) {
+                                    $("#contact_form").validate({
+                                        submitHandler: function(form) {
+                                            var form_btn = $(form).find('button[type="submit"]');
+                                            var form_result_div = '#form-result';
+                                            $(form_result_div).remove();
+                                            form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
+                                            var form_btn_old_msg = form_btn.html();
+                                            form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
+                                            $(form).ajaxSubmit({
+                                                dataType:  'json',
+                                                success: function(data) {
+                                                    if( data.status == 'true' ) {
+                                                        $(form).find('.form-control').val('');
+                                                    }
+                                                    form_btn.prop('disabled', false).html(form_btn_old_msg);
+                                                    $(form_result_div).html(data.message).fadeIn('slow');
+                                                    setTimeout(function(){ $(form_result_div).fadeOut('slow') }, 6000);
+                                                }
+                                            });
+                                        }
+                                    });
+                                })(jQuery);
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section: Testimonials -->
+
+        <section class="layer-overlay overlay-white-2 bg-no-repeat bg-pos-center-center bg-size-contain" data-tm-bg-img="images/bg/map.png">
+            <div class="container pb-130">
+                <div class="section-title">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="text-center mb-60">
+                                <div class="tm-sc-section-title section-title">
+                                    <div class="title-wrapper">
+                                        <h2>What they are talking about us</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 col-xl-4">
+                            <div class="testimonial-item mb-md-60">
+                                <div class="star-rating"> <span data-tm-width="90%"></span></div>
+                                <div class="author-text"> I feel very happy and be proud to connect with this industry. I presume this is a very productive and professional industry. I wish very good luck & success for this industry</div>
+                                <div class="author-info clearfix">
+                                    <h5 class="name">Jim Grace,</h5>
+                                    <span class="job-position">Developer</span> <a class="company-url" href="#"></a>
+                                </div>
+                                <div class="author-thumb">
+                                    <img class="rounded-circle" src="http://placehold.it/75x75" alt=""/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-4">
+                            <div class="testimonial-item mb-md-60">
+                                <div class="star-rating"> <span data-tm-width="90%"></span></div>
+                                <div class="author-text"> I feel very happy and be proud to connect with this industry. I presume this is a very productive and professional industry. I wish very good luck & success for this industry</div>
+                                <div class="author-info clearfix">
+                                    <h5 class="name">Jim Grace,</h5>
+                                    <span class="job-position">Developer</span> <a class="company-url" href="#"></a>
+                                </div>
+                                <div class="author-thumb">
+                                    <img class="rounded-circle" src="http://placehold.it/75x75" alt=""/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-4">
+                            <div class="testimonial-item">
+                                <div class="star-rating"> <span data-tm-width="90%"></span></div>
+                                <div class="author-text"> I feel very happy and be proud to connect with this industry. I presume this is a very productive and professional industry. I wish very good luck & success for this industry</div>
+                                <div class="author-info clearfix">
+                                    <h5 class="name">Jim Grace,</h5>
+                                    <span class="job-position">Developer</span> <a class="company-url" href="#"></a>
+                                </div>
+                                <div class="author-thumb">
+                                    <img class="rounded-circle" src="http://placehold.it/75x75" alt=""/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <!-- end main-content -->
+{% endblock %}

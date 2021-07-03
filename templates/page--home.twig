@@ -7,54 +7,9 @@
         <section id="home">
             <div class="container-fluid p-0">
                 <div class="row">
-
                     <div class="col">
                         {% if slideshow %}
-                        <!-- START Colek HTML RevSlider REVOLUTION SLIDER 6.2.19 -->
-                        <p class="rs-p-wp-fix"></p>
-                        <rs-module-wrap id="rev_slider_7_1_wrapper" data-alias="colek-html-revslider" data-source="gallery" style="background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
-                            <rs-module id="rev_slider_7_1" style="" data-version="6.2.19">
-                                <rs-slides>
-                                    {% for slider in slideshow %}
-                                        <rs-slide data-key="rs-{{ loop.index }}" data-title="Slider {{ loop.index }}" data-thumb="{{ slider.slide_image|src }}" data-anim="ei:d;eo:d;s:d;r:0;t:slotslide-horizontal;sl:d;">
-                                            <img src="{{ slider.slide_image|src }}" title="{{ slider.name }}" width="1920" height="1280" data-parallax="off" data-no-retina="" class="rev-slidebg">
-                                            {# First layer #}
-                                            <rs-layer
-                                                id=""
-                                                data-type="text"
-                                                data-color="{{ slider.slider_layer_1_data_color }}"
-                                                data-rsp_ch="on"
-                                                data-xy="{{ slider.slider_layer_1_data_xy }}"
-                                                data-text="{{ slider.slider_layer_1_data_text }}"
-                                                data-frame_1="{{ slider.slider_layer_1_data_frame_1 }}"
-                                                data-frame_999="{{ slider.slider_layer_1_data_frame_999 }}"
-                                                style="z-index:9;font-family:Montserrat;">
-                                                {{ slider.body }}
-                                            </rs-layer>
-
-                                            {# Second layer #}
-                                            <rs-layer
-                                                id=""
-                                                data-type="text"
-                                                data-rsp_ch="on"
-                                                data-xy="x:l,l,c,c;xo:60px,50px,0,0;yo:538px,530px,427px,382px;"
-                                                data-text="w:normal;s:20,16,16,15;l:25,20,18,20;a:left,left,left,center;"
-                                                data-frame_1="st:1200;sp:1000;sR:1200;"
-                                                data-frame_999="o:0;st:w;sR:6800;"
-                                                style="z-index:8;font-family:Roboto;" >
-                                                <a class="{{ slider.hyperlink }}" class="btn btn-round btn-lg btn-theme-colored1 text-white">{{ slider.button_txt }}</a>
-                                            </rs-layer>
-
-                                            {# Third layer #}
-
-                                            {# Fourth layer #}
-
-                                        </rs-slide>
-                                    {% endfor %}
-                                </rs-slides>
-                            </rs-module>
-                        </rs-module-wrap>
-                        <!-- END REVOLUTION SLIDER -->
+                            {% include 'partial/sliders.twig' with {sliders: slideshow}  %}
                         {% endif %}
                     </div>
                 </div>

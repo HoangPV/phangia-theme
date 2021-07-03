@@ -7,118 +7,55 @@
         <section id="home">
             <div class="container-fluid p-0">
                 <div class="row">
+
                     <div class="col">
+                        {% if slideshow %}
                         <!-- START Colek HTML RevSlider REVOLUTION SLIDER 6.2.19 -->
                         <p class="rs-p-wp-fix"></p>
                         <rs-module-wrap id="rev_slider_7_1_wrapper" data-alias="colek-html-revslider" data-source="gallery" style="background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
                             <rs-module id="rev_slider_7_1" style="" data-version="6.2.19">
                                 <rs-slides>
-                                    <rs-slide data-key="rs-19" data-title="Slide 1" data-thumb="http://placehold.it/1920x1280" data-anim="ei:d;eo:d;s:d;r:0;t:slotslide-horizontal;sl:d;">
-                                        <img src="http://placehold.it/1920x1280" title="bg2" width="1920" height="1280" data-parallax="off" class="rev-slidebg" data-no-retina>
-                                        <!--
-                                          -->
-                                        <rs-layer
-                                                id="slider-7-slide-19-layer-18"
+                                    {% for slider in slideshow %}
+                                        <rs-slide data-key="rs-{{ loop.index }}" data-title="Slider {{ loop.index }}" data-thumb="{{ slider.slide_image|src }}" data-anim="ei:d;eo:d;s:d;r:0;t:slotslide-horizontal;sl:d;">
+                                            <img src="{{ slider.slide_image|src }}" title="{{ slider.name }}" width="1920" height="1280" data-parallax="off" data-no-retina="" class="rev-slidebg">
+                                            {# First layer #}
+                                            <rs-layer
+                                                id=""
                                                 data-type="text"
-                                                data-color="#122a48"
+                                                data-color="{{ slider.slider_layer_1_data_color }}"
                                                 data-rsp_ch="on"
-                                                data-xy="x:l,l,c,c;xo:55px,45px,0,0;yo:182px,195px,155px,180px;"
-                                                data-text="w:normal;s:100,90,72,52;l:105,95,74,56;ls:-2px,-1px,0px,0px;fw:800;a:left,left,center,center;"
-                                                data-frame_1="st:600;sp:1000;sR:600;"
-                                                data-frame_999="o:0;st:w;sR:7400;"
-                                                style="z-index:9;font-family:Montserrat;"
-                                        >Quality heating<br />
-                                            & air condition<br />
-                                            services.
-                                        </rs-layer>
-                                        <!--
-                                          -->
-                                        <rs-layer
-                                                id="slider-7-slide-19-layer-22"
+                                                data-xy="{{ slider.slider_layer_1_data_xy }}"
+                                                data-text="{{ slider.slider_layer_1_data_text }}"
+                                                data-frame_1="{{ slider.slider_layer_1_data_frame_1 }}"
+                                                data-frame_999="{{ slider.slider_layer_1_data_frame_999 }}"
+                                                style="z-index:9;font-family:Montserrat;">
+                                                {{ slider.body }}
+                                            </rs-layer>
+
+                                            {# Second layer #}
+                                            <rs-layer
+                                                id=""
                                                 data-type="text"
                                                 data-rsp_ch="on"
                                                 data-xy="x:l,l,c,c;xo:60px,50px,0,0;yo:538px,530px,427px,382px;"
                                                 data-text="w:normal;s:20,16,16,15;l:25,20,18,20;a:left,left,left,center;"
                                                 data-frame_1="st:1200;sp:1000;sR:1200;"
                                                 data-frame_999="o:0;st:w;sR:6800;"
-                                                style="z-index:8;font-family:Roboto;"
-                                        ><a href="#" class="btn btn-round btn-lg btn-theme-colored1 text-white">Contact Us</a>
-                                        </rs-layer>
-                                        <!--
-                                          -->
-                                    </rs-slide>
-                                    <rs-slide data-key="rs-20" data-title="Slide 1" data-thumb="http://placehold.it/1920x1280" data-anim="ei:d;eo:d;s:d;r:0;t:slotslide-horizontal;sl:d;">
-                                        <img src="http://placehold.it/1920x1280" title="bg3" width="1920" height="1280" data-parallax="off" class="rev-slidebg" data-no-retina>
-                                        <!--
-                                          -->
-                                        <rs-layer
-                                                id="slider-7-slide-20-layer-18"
-                                                data-type="text"
-                                                data-color="#122a48"
-                                                data-rsp_ch="on"
-                                                data-xy="x:l,l,c,c;xo:55px,45px,0,0;yo:182px,195px,155px,180px;"
-                                                data-text="w:normal;s:100,90,72,52;l:105,95,74,56;ls:-2px,-1px,0px,0px;fw:800;a:left,left,center,center;"
-                                                data-frame_1="st:600;sp:1000;sR:600;"
-                                                data-frame_999="o:0;st:w;sR:7400;"
-                                                style="z-index:9;font-family:Montserrat;"
-                                        >Quality heating<br />
-                                            & air condition<br />
-                                            services.
-                                        </rs-layer>
-                                        <!--
-                                          -->
-                                        <rs-layer
-                                                id="slider-7-slide-20-layer-22"
-                                                data-type="text"
-                                                data-rsp_ch="on"
-                                                data-xy="x:l,l,c,c;xo:60px,50px,0,0;yo:538px,530px,427px,382px;"
-                                                data-text="w:normal;s:20,16,16,15;l:25,20,18,20;a:left,left,left,center;"
-                                                data-frame_1="st:1200;sp:1000;sR:1200;"
-                                                data-frame_999="o:0;st:w;sR:6800;"
-                                                style="z-index:8;font-family:Roboto;"
-                                        ><a href="#" class="btn btn-round btn-lg btn-theme-colored1 text-white">Contact Us</a>
-                                        </rs-layer>
-                                        <!--
-                                          -->
-                                    </rs-slide>
-                                    <rs-slide data-key="rs-21" data-title="Slide 1" data-thumb="http://placehold.it/1920x1280" data-anim="ei:d;eo:d;s:d;r:0;t:slotslide-horizontal;sl:d;">
-                                        <img src="http://placehold.it/1920x1280" title="bg4" width="1920" height="1280" data-bg="p:0% 20%;" data-parallax="off" class="rev-slidebg" data-no-retina>
-                                        <!--
-                                          -->
-                                        <rs-layer
-                                                id="slider-7-slide-21-layer-18"
-                                                data-type="text"
-                                                data-color="#122a48"
-                                                data-rsp_ch="on"
-                                                data-xy="x:l,l,c,c;xo:55px,45px,0,0;yo:182px,195px,155px,180px;"
-                                                data-text="w:normal;s:100,90,72,52;l:105,95,74,56;ls:-2px,-1px,0px,0px;fw:800;a:left,left,center,center;"
-                                                data-frame_1="st:600;sp:1000;sR:600;"
-                                                data-frame_999="o:0;st:w;sR:7400;"
-                                                style="z-index:9;font-family:Montserrat;"
-                                        >Quality heating<br />
-                                            & air condition<br />
-                                            services.
-                                        </rs-layer>
-                                        <!--
-                                          -->
-                                        <rs-layer
-                                                id="slider-7-slide-21-layer-22"
-                                                data-type="text"
-                                                data-rsp_ch="on"
-                                                data-xy="x:l,l,c,c;xo:60px,50px,0,0;yo:538px,530px,427px,382px;"
-                                                data-text="w:normal;s:20,16,16,15;l:25,20,18,20;a:left,left,left,center;"
-                                                data-frame_1="st:1200;sp:1000;sR:1200;"
-                                                data-frame_999="o:0;st:w;sR:6800;"
-                                                style="z-index:8;font-family:Roboto;"
-                                        ><a href="#" class="btn btn-round btn-lg btn-theme-colored1 text-white">Contact Us</a>
-                                        </rs-layer>
-                                        <!--
-                                          -->
-                                    </rs-slide>
+                                                style="z-index:8;font-family:Roboto;" >
+                                                <a class="{{ slider.hyperlink }}" class="btn btn-round btn-lg btn-theme-colored1 text-white">{{ slider.button_txt }}</a>
+                                            </rs-layer>
+
+                                            {# Third layer #}
+
+                                            {# Fourth layer #}
+
+                                        </rs-slide>
+                                    {% endfor %}
                                 </rs-slides>
                             </rs-module>
                         </rs-module-wrap>
                         <!-- END REVOLUTION SLIDER -->
+                        {% endif %}
                     </div>
                 </div>
             </div>

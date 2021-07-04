@@ -138,13 +138,12 @@
 							<h4 class="widget-title">Khám phá</h4>
 							<div class="menu-footer-page-list">
 								<ul id="footer-page-list" class="menu">
-									<li><a href="#">Giới thiệu</a></li>
-									<li><a href="#">Dịch vụ</a></li>
-									<li><a href="#">Công trình</a></li>
-									<li><a href="#">Báo giá</a></li>
-									<li><a href="#">Tin tức</a></li>
-									<li><a href="#">Liên hệ</a></li>
-									<li><a href="#">Hỗ trợ</a></li>
+									{% if footer_menu %}
+										{% for item in footer_menu.items %}
+											<li><a href="{{ item.url }}">{{ item.name }}</a></li>
+										{% endfor %}
+									{% endif %}
+
 									{#<li><a href="#">Privacy Policy</a></li>
 									<li><a href="#">Terms of use</a></li>#}
 								</ul>

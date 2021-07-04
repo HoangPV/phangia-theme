@@ -1,5 +1,4 @@
 {% extends "base.twig" %}
-
 {% block content %}
     <!-- Start main-content -->
     <div class="main-content-area">
@@ -165,60 +164,61 @@
         <section>
             <div class="container-fluid p-0">
                 <div class="tm-sc-custom-columns-holder tm-cc-two-columns tm-cc-responsive-mode-1280">
-                    <div class="tm-sc-custom-columns-holder-item z-index-1" data-tm-bg-img="http://placehold.it/1920x1280" data-item-class="tm-custom-columns-12" data-1200-up="100px 20% 100px 15%" data-1199-down="100px 10% 100px 10%" data-991-down="100px 10% 100px 10%" data-767-down="100px 10% 100px 10%" data-575-down="100px 10% 100px 10%">
+                    <div class="tm-sc-custom-columns-holder-item z-index-1" data-tm-bg-img="{{ post.why_us_left_image|src_banner }}" data-item-class="tm-custom-columns-12" data-1200-up="100px 20% 100px 15%" data-1199-down="100px 10% 100px 10%" data-991-down="100px 10% 100px 10%" data-767-down="100px 10% 100px 10%" data-575-down="100px 10% 100px 10%">
                         <div class="item-inner">
                             <div class="item-content tm-custom-columns-12">
                             </div>
                         </div>
                     </div>
-                    <div class="tm-sc-custom-columns-holder-item bg-img-left block-section-left-part layer-overlay overlay-white-8" data-tm-bg-img="http://placehold.it/1920x1280" data-item-class="tm-custom-columns-11" data-1200-up="80px 15% 70px 15%" data-1199-down="80px 10% 70px 10%" data-991-down="80px 10% 70px 10%" data-767-down="80px 10% 70px 10%" data-575-down="80px 10% 70px 10%">
+                    <div class="tm-sc-custom-columns-holder-item bg-img-left block-section-left-part layer-overlay overlay-white-8" data-tm-bg-img="{{ post.why_us_right_image|src_banner }}" data-item-class="tm-custom-columns-11" data-1200-up="80px 15% 70px 15%" data-1199-down="80px 10% 70px 10%" data-991-down="80px 10% 70px 10%" data-767-down="80px 10% 70px 10%" data-575-down="80px 10% 70px 10%">
                         <div class="item-inner">
                             <div class="item-content tm-custom-columns-11">
-                                <h2 class="mb-30">Why you should choose our services</h2>
-                                <p class="mb-40">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                <h2 class="mb-30">{{ post.why_us_title }}</h2>
+                                <p class="mb-40">{{ post.why_us_subtitle }}</p>
                                 <div class="tm-sc-unordered-list display-inline display-block mb-30 list-style9 font-weight-700 text-theme-colored4 mb-30">
                                     <ul>
-                                        <li>Awesome services</li>
-                                        <li>Trusted and certified</li>
+                                        <li>{{ post.reason_1_title }}</li>
+                                        <li>{{ post.reason_2_title }}</li>
+                                        <li>{{ post.reason_3_title }}</li>
                                     </ul>
                                 </div>
                                 <div id="accordion100" class="tm-accordion mt-30 mb-md-40 mb-lg-50">
                                     <div class="card">
                                         <div class="card-header p-0" id="heading101">
                                             <h5 class="title" data-toggle="collapse" data-target="#collapse101" aria-expanded="true" aria-controls="collapse101">
-                                                How to fix your home ac in three steps?
+                                                {{ post.reason_1_title }}
                                                 <i class="fas fa-chevron-down accordion-controls-icon"></i>
                                             </h5>
                                         </div>
                                         <div id="collapse101" class="collapse show" aria-labelledby="heading101" data-parent="#accordion100">
                                             <div class="card-body">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Minus, dolorum non accusamus vero repudiandae, vel illum et tenetur in magnam dicta dolores impedit totam placeat?
+                                               {{ post.reason_1_body }}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="card">
                                         <div class="card-header p-0" id="heading102">
                                             <h5 class="title collapsed" data-toggle="collapse" data-target="#collapse102" aria-expanded="false" aria-controls="collapse102">
-                                                How much you charge hourly?
+                                                {{ post.reason_2_title }}
                                                 <i class="fas fa-chevron-down accordion-controls-icon"></i>
                                             </h5>
                                         </div>
                                         <div id="collapse102" class="collapse" aria-labelledby="heading102" data-parent="#accordion100">
                                             <div class="card-body">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Minus, dolorum non accusamus vero repudiandae, vel illum et tenetur in magnam dicta dolores impedit totam placeat?
+                                                {{ post.reason_2_body }}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="card">
                                         <div class="card-header p-0" id="heading103">
                                             <h5 class="title collapsed" data-toggle="collapse" data-target="#collapse103" aria-expanded="false" aria-controls="collapse103">
-                                                Air conditioner is different then others?
+                                                {{ post.reason_3_title }}
                                                 <i class="fas fa-chevron-down accordion-controls-icon"></i>
                                             </h5>
                                         </div>
                                         <div id="collapse103" class="collapse" aria-labelledby="heading103" data-parent="#accordion100">
                                             <div class="card-body">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Minus, dolorum non accusamus vero repudiandae, vel illum et tenetur in magnam dicta dolores impedit totam placeat?
+                                                {{ post.reason_3_body }}
                                             </div>
                                         </div>
                                     </div>
@@ -296,7 +296,7 @@
         </section>
 
         <!-- Section: Team -->
-        <section>
+        <section class="d-none">
             <div class="container pb-50">
                 <div class="section-title">
                     <div class="row justify-content-md-center">
@@ -421,18 +421,18 @@
         </section>
 
         <!-- Section: Video Popup -->
-        <section class="layer-overlay overlay-theme-colored4-9 bg-no-repeat" data-tm-bg-img="http://placehold.it/1919x727">
+        <section class="layer-overlay overlay-theme-colored4-9 bg-no-repeat" data-tm-bg-img="{{ post.banner_video|src_video_popup }}">
             <div class="container">
                 <div class="section-content">
                     <div class="row">
                         <div class="col"></div>
                         <div class="col-lg-10 col-xl-10">
                             <div class="video-block text-center mb-0">
-                                <h2 class="text-white popup-video-title mb-40">We Provide Premium <br> Cooling & Heating Services</h2>
+                                <h2 class="text-white popup-video-title mb-40">Công ty TNHH Điện lạnh <br>PHAN GIA</h2>
                                 <div class="box-hover-effect tm-sc-video-popup tm-sc-video-popup-css-button">
                                     <div class="effect-wrapper d-flex align-items-center">
                                         <div class="animated-css-play-button"><span class="play-icon"><i class="fa fa-play"></i></span></div>
-                                        <a class="hover-link" data-lightbox-gallery="youtube-video" href="https://www.youtube.com/watch?v=xcJtL7QggTI" title=""></a>
+                                        <a class="hover-link" data-lightbox-gallery="youtube-video" href="https://youtu.be/HI1FOPIi1Us" title=""></a>
                                     </div>
                                 </div>
                             </div>

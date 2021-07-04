@@ -3,13 +3,13 @@
     <!-- Start main-content -->
     <div class="main-content-area">
         <!-- Section: inner-header Start -->
-        <section class="page-title divider layer-overlay overlay-theme-colored2-8 section-typo-light bg-img-center" data-tm-bg-img="http://placehold.it/1920x1280">
+        <section class="page-title divider layer-overlay overlay-theme-colored2-8 section-typo-light bg-img-center" data-tm-bg-img="{{ post.banner|src ?: 'http://placehold.it/1920x1280' }}">
             <div class="container pt-90 pb-90">
                 <!-- Section Content -->
                 <div class="section-content">
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <h2 class="title text-white">Contact</h2>
+                            <h2 class="title text-white">Liên hệ với chúng tôi</h2>
                             <nav role="navigation" class="breadcrumb-trail breadcrumbs">
                                 <div class="breadcrumbs">
                   <span class="trail-item trail-begin">
@@ -35,7 +35,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="esc-heading small-border text-center">
-                                <h3>Have any Questions?</h3>
+                                <h3>Bạn có câu hỏi hay thắc nào không?</h3>
                             </div>
                         </div>
                     </div>
@@ -49,8 +49,8 @@
                                         <a class="icon icon-type-font-icon icon-lg icon-dark icon-circled"> <i class="flaticon-contact-045-call"></i> </a>
                                     </div>
                                     <div class="icon-text">
-                                        <h5 class="icon-box-title mt-0">Phone</h5>
-                                        <div class="content"><a href="tel:+123.456.7890">+123.456.7890</a></div>
+                                        <h5 class="icon-box-title mt-0">Số điện thoại</h5>
+                                        <div class="content"><a href="tel:{{ t_settings.get_phone }}">{{ t_settings.get_phone }}</a></div>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
@@ -63,8 +63,8 @@
                                         <a class="icon icon-type-font-icon icon-lg icon-dark icon-circled"> <i class="flaticon-contact-043-email-1"></i> </a>
                                     </div>
                                     <div class="icon-text">
-                                        <h5 class="icon-box-title mt-0">Email</h5>
-                                        <div class="content"><a href="mailto:needhelp@yourdomain.com">needhelp@yourdomain.com</a></div>
+                                        <h5 class="icon-box-title mt-0">Địa chỉ Email</h5>
+                                        <div class="content"><a href="mailto:{{ t_settings.get_email_address }}">{{ t_settings.get_email_address }}</a></div>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
@@ -77,8 +77,8 @@
                                         <a class="icon icon-type-font-icon icon-lg icon-dark icon-circled"> <i class="flaticon-contact-025-world"></i> </a>
                                     </div>
                                     <div class="icon-text">
-                                        <h5 class="icon-box-title mt-0">Address</h5>
-                                        <div class="content">66 Broklyn Street USA</div>
+                                        <h5 class="icon-box-title mt-0">Địa chỉ cửa hàng</h5>
+                                        <div class="content">{{ t_settings.get_address }}</div>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
@@ -95,8 +95,8 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="google-map">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7496.556775569473!2d144.95479118909844!3d-37.81548660764023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2sbd!4v1562002563953!5m2!1sen!2sbd" width="2600" height="700" allowfullscreen></iframe>
-                            <div class="call-for-estimate">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.269071946285!2d106.77934791528864!3d10.790691961879734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752684a51f5713%3A0x4f9f21fc2edec2aa!2zOSDEkMaw4budbmcgxJDhu5cgWHXDom4gSOG7o3AsIELDrG5oIFRyxrBuZyDEkMO0bmcsIFF14bqtbiAyLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1625282380580!5m2!1svi!2s" width="2600" height="700" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            <div class="call-for-estimate d-none">
                                 <h5 class="number"><span class="font-weight-300">Call for Estimate:</span> 666 888 0000</h5>
                             </div>
                         </div>
@@ -106,40 +106,40 @@
         </section>
         <!-- Section: Contact -->
 
-        <section data-tm-margin-top="-620px">
+        <section data-tm-margin-top="-620px" class="d-none">
             <div class="container pt-20 pb-0">
                 <div class="row">
                     <div class="col"></div>
                     <div class="col-xl-5">
                         <div class="contact-from bg-theme-colored2 mt-lg-60 mb-lg-40">
-                            <h3 class="text-white mt-0 mb-30">Leave a Message</h3>
+                            <h3 class="text-white mt-0 mb-30">Bạn hãy điền nội dung tin nhắn vào form dưới đây và gửi cho chúng tôi. Chúng tôi sẽ trả lời bạn sau khi nhận được.</h3>
                             <!-- Contact Form -->
                             <form id="contact_form" name="contact_form" class="" action="includes/sendmail.php" method="post">
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="form-group">
-                                            <input name="form_name" class="form-control" type="text" placeholder="Enter Name" required="">
+                                            <input name="form_name" class="form-control" type="text" placeholder="Họ tên" required="">
                                         </div>
                                     </div>
                                     <div class="col-sm-12">
                                         <div class="form-group">
-                                            <input name="form_email" class="form-control required email" type="email" placeholder="Enter Email">
+                                            <input name="form_email" class="form-control required email" type="email" placeholder="Địa chỉ Email">
                                         </div>
                                     </div>
                                     <div class="col-sm-12">
                                         <div class="form-group">
-                                            <input name="form_phone" class="form-control" type="text" placeholder="Enter Phone">
+                                            <input name="form_phone" class="form-control" type="text" placeholder="Số điện thoại">
                                         </div>
                                     </div>
                                     <div class="col-sm-12">
                                         <div class="form-group">
-                                            <textarea name="form_message" class="form-control required" rows="6" placeholder="Enter Message"></textarea>
+                                            <textarea name="form_message" class="form-control required" rows="6" placeholder="Nội dung"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <input name="form_botcheck" class="form-control" type="hidden" value="" />
-                                            <button type="submit" class="btn btn-round btn-theme-colored1 text-white mt-10 mb-sm-30" data-loading-text="Please wait...">Send a message</button>
+                                            <button type="submit" class="btn btn-round btn-theme-colored1 text-white mt-10 mb-sm-30" data-loading-text="Vui lòng đợi trong giây lát...">Gửi</button>
                                         </div>
                                     </div>
                                 </div>
@@ -185,7 +185,7 @@
                             <div class="text-center mb-60">
                                 <div class="tm-sc-section-title section-title">
                                     <div class="title-wrapper">
-                                        <h2>What they are talking about us</h2>
+                                        <h2>Ý kiến khách hàng</h2>
                                     </div>
                                 </div>
                             </div>
@@ -197,39 +197,39 @@
                         <div class="col-md-6 col-lg-4 col-xl-4">
                             <div class="testimonial-item mb-md-60">
                                 <div class="star-rating"> <span data-tm-width="90%"></span></div>
-                                <div class="author-text"> I feel very happy and be proud to connect with this industry. I presume this is a very productive and professional industry. I wish very good luck & success for this industry</div>
+                                <div class="author-text"> Trung tâm chúng tôi rất hài lòng khi chọn được công ty Phan Gia hợp tác và đem lại dịch vụ tốt nhất. </div>
                                 <div class="author-info clearfix">
-                                    <h5 class="name">Jim Grace,</h5>
-                                    <span class="job-position">Developer</span> <a class="company-url" href="#"></a>
+                                    <h5 class="name">Anh Toàn,</h5>
+                                    <span class="job-position">Giám đốc</span> <a class="company-url" href="#"></a>
                                 </div>
                                 <div class="author-thumb">
-                                    <img class="rounded-circle" src="http://placehold.it/75x75" alt=""/>
+                                    <img width="74px" class="rounded-circle" src="https://dienlanhphangia.com/wp-content/uploads/2019/09/Zalo_ScreenShot_20_9_2019_91365.png" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4 col-xl-4">
                             <div class="testimonial-item mb-md-60">
                                 <div class="star-rating"> <span data-tm-width="90%"></span></div>
-                                <div class="author-text"> I feel very happy and be proud to connect with this industry. I presume this is a very productive and professional industry. I wish very good luck & success for this industry</div>
+                                <div class="author-text"> Từ Ngày ký Hợp đồng Bảo trì máy lạnh với Phan Gia hệ thống máy lạnh của chuỗi nhà hàng hoạt động rất tốt , dịch vụ  xử lý nhanh ...</div>
                                 <div class="author-info clearfix">
-                                    <h5 class="name">Jim Grace,</h5>
-                                    <span class="job-position">Developer</span> <a class="company-url" href="#"></a>
+                                    <h5 class="name">Anh Thành,</h5>
+                                    <span class="job-position">Giám đốc</span> <a class="company-url" href="#"></a>
                                 </div>
                                 <div class="author-thumb">
-                                    <img class="rounded-circle" src="http://placehold.it/75x75" alt=""/>
+                                    <img width="74px" class="rounded-circle" src="https://dienlanhphangia.com/wp-content/uploads/2019/09/u3.jpg" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4 col-xl-4">
                             <div class="testimonial-item">
                                 <div class="star-rating"> <span data-tm-width="90%"></span></div>
-                                <div class="author-text"> I feel very happy and be proud to connect with this industry. I presume this is a very productive and professional industry. I wish very good luck & success for this industry</div>
+                                <div class="author-text"> Dịch vụ bao hành và lắp đặt ở Phan Gia tôi đánh giá rất cao về sự chuyên nghiệp và uy tín nơi đây</div>
                                 <div class="author-info clearfix">
-                                    <h5 class="name">Jim Grace,</h5>
-                                    <span class="job-position">Developer</span> <a class="company-url" href="#"></a>
+                                    <h5 class="name">Anh Minh,</h5>
+                                    <span class="job-position">Giám đốc</span> <a class="company-url" href="#"></a>
                                 </div>
                                 <div class="author-thumb">
-                                    <img class="rounded-circle" src="http://placehold.it/75x75" alt=""/>
+                                    <img width="74px" class="rounded-circle" src="https://dienlanhphangia.com/wp-content/uploads/2019/09/avatar1.png" alt="">
                                 </div>
                             </div>
                         </div>

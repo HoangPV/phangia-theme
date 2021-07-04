@@ -1,0 +1,37 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <!-- Start main-content -->
+    <div class="main-content-area">
+        <!-- Section: inner-header Start -->
+        <section class="page-title divider layer-overlay overlay-theme-colored2-8 section-typo-light bg-img-center" data-tm-bg-img="{{ post.banner|src ?: 'http://placehold.it/1920x1280' }}">
+            <div class="container pt-90 pb-90">
+                <!-- Section Content -->
+                <div class="section-content">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h2 class="title text-white">{{ post.name }}</h2>
+                            <nav role="navigation" class="breadcrumb-trail breadcrumbs">
+                                <div class="breadcrumbs">
+                  <span class="trail-item trail-begin">
+                    <a href="{{ site.link }}"><span>Trang chủ</span></a>
+                  </span>
+                                    <span><i class="fa fa-angle-right"></i></span>
+                                    <span class="trail-item"><a href="#"><span>Trang</span></a></span>
+                                    <span><i class="fa fa-angle-right"></i></span>
+                                    <span class="trail-item trail-end text-theme-colored1">{{ post.title }}</span>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section: inner-header End -->
+
+        {% block after_banner %}
+        {% endblock %}
+
+    </div>
+    <!-- end main-content -->
+{% endblock %}

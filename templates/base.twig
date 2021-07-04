@@ -4,7 +4,8 @@
 	{% endblock %}
 	</head>
 {% endblock %}
-<body class="container-1340px has-side-panel side-panel-right">
+{% set body_class = body_class ~ ' ' ~ ['container-1340px', 'has-side-panel', 'side-panel-right']|join(' ') %}
+<body class="{{body_class}}">
 <!-- preloader -->
 <div id="preloader">
 	<div id="spinner">
@@ -12,15 +13,15 @@
 			<div class="cssload-loading"><i></i><i></i><i></i><i></i></div>
 		</div>
 	</div>
-	<div id="disable-preloader" class="btn btn-default btn-sm">Disable Preloader</div>
+	<div id="disable-preloader" class="btn btn-default btn-sm">{{ 'Disable Preloader'|t }}</div>
 </div>
 <div class="side-panel-body-overlay"></div>
-<div id="side-panel-container" class="dark" data-tm-bg-img="images/side-push-bg.jpg">
+<div id="side-panel-container" class="dark" data-tm-bg-img="{{ site.theme.link }}/images/side-push-bg.jpg">
 	<div class="side-panel-wrap">
 		<div id="side-panel-trigger-close" class="side-panel-trigger"><a href="#"><i class="fa fa-times side-panel-trigger-icon"></i></a></div>
-		<img class="logo mb-50" src="images/logo-wide.png" alt="Logo">
-		<p>Lorem ipsum is simply free text dolor sit am adipi we help you ensure everyone is in the right jobs sicing elit, sed do consulting firms Et leggings across the nation tempor.</p>
-		<div class="widget">
+		<img class="logo mb-50" src="{{ t_settings.get_logo }}" alt="{{ 'Logo'|t }}">
+		<p>{{ t_settings.get_about_text }}</p>
+		<div class="widget d-none">
 			<h4 class="widget-title widget-title-line-bottom line-bottom-theme-colored1">Latest News</h4>
 			<div class="latest-posts">
 				<article class="post media-post clearfix pb-0 mb-10">
@@ -48,24 +49,24 @@
 		</div>
 
 		<div class="widget">
-			<h5 class="widget-title widget-title-line-bottom line-bottom-theme-colored1">Contact Info</h5>
+			<h5 class="widget-title widget-title-line-bottom line-bottom-theme-colored1">{{ 'Thông tin liên hệ'}}</h5>
 			<div class="tm-widget-contact-info contact-info-style1 contact-icon-theme-colored1">
 				<ul>
 					<li class="contact-name">
 						<div class="icon"><i class="flaticon-contact-037-address"></i></div>
-						<div class="text">John Doe</div>
+						<div class="text">{{ t_settings.get_founder_name }}</div>
 					</li>
 					<li class="contact-phone">
 						<div class="icon"><i class="flaticon-contact-042-phone-1"></i></div>
-						<div class="text"><a href="tel:+510-455-6735">+510-455-6735</a></div>
+						<div class="text"><a href="tel:{{ t_settings.get_phone }}">{{ t_settings.get_phone }}</a></div>
 					</li>
 					<li class="contact-email">
 						<div class="icon"><i class="flaticon-contact-043-email-1"></i></div>
-						<div class="text"><a href="mailto:info@yourdomain.com">info@yourdomain.com</a></div>
+						<div class="text"><a href="mailto:{{ t_settings.get_email_address }}">{{ t_settings.get_email_address }}</a></div>
 					</li>
 					<li class="contact-address">
 						<div class="icon"><i class="flaticon-contact-047-location"></i></div>
-						<div class="text">3982 Browning Lane Carolyns Circle, California</div>
+						<div class="text">{{ t_settings.get_address }}</div>
 					</li>
 				</ul>
 			</div>
@@ -80,155 +81,30 @@
 				<div class="row">
 					<div class="col-xl-auto header-top-left align-self-center text-center text-xl-left">
 						<ul class="element contact-info">
-							<li class="contact-phone"><i class="fa fa-phone font-icon sm-display-block"></i> Tel: +440-98-5298</li>
-							<li class="contact-email"><i class="fa fa-envelope font-icon sm-display-block"></i> info@example.com</li>
-							<li class="contact-address"><i class="fa fa-map font-icon sm-display-block"></i> 121 King Street, Melbourne</li>
+							<li class="contact-phone"><i class="fa fa-phone font-icon sm-display-block"></i> {{ 'Tel'|t }}: {{ t_settings.get_phone }}</li>
+							<li class="contact-email d-none"><i class="fa fa-envelope font-icon sm-display-block"></i> {{ t_settings.get_email_address }}</li>
+							<li class="contact-address"><i class="fa fa-map font-icon sm-display-block"></i> {{ t_settings.get_address }}</li>
 						</ul>
 					</div>
 					<div class="col-xl-auto ml-xl-auto header-top-right align-self-center text-center text-xl-right">
 						<div class="element pt-0 pb-0">
 							<ul class="styled-icons icon-dark icon-theme-colored1 icon-circled clearfix">
-								<li><a class="social-link" href="#" ><i class="fab fa-facebook"></i></a></li>
-								<li><a class="social-link" href="#" ><i class="fab fa-twitter"></i></a></li>
-								<li><a class="social-link" href="#" ><i class="fab fa-youtube"></i></a></li>
+								<li><a class="social-link" href="{{ t_settings.get_facebook }}" ><i class="fab fa-facebook"></i></a></li>
+								<li class="d-none"><a class="social-link" href="#" ><i class="fab fa-twitter"></i></a></li>
+								<li class="d-none"><a class="social-link" href="#" ><i class="fab fa-youtube"></i></a></li>
 							</ul>
 						</div>
 						<div class="element pt-0 pb-0">
-							<a href="ajax-load/form-appointment.html" class="btn btn-theme-colored2 btn-flat btn-sm ajaxload-popup">Make an Appointment</a>
+							<a href="ajax-load/form-appointment.html" class="btn btn-theme-colored2 btn-flat btn-sm ajaxload-popup">Đặt hẹn</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="header-nav">
-			<div class="header-nav-wrapper navbar-scrolltofixed">
-				<div class="menuzord-container header-nav-container">
-					<div class="container position-relative">
-						<div class="row header-nav-col-row">
-							<div class="col-sm-auto align-self-center">
-								<a class="menuzord-brand site-brand" href="index-mp-layout1.html">
-									<img class="logo-default logo-1x" src="images/logo-wide.png" alt="Logo">
-									<img class="logo-default logo-2x retina" src="images/logo-wide@2x.png" alt="Logo">
-								</a>
-							</div>
-							<div class="col-sm-auto ml-auto pr-0 align-self-center">
-								<nav id="top-primary-nav" class="menuzord green" data-effect="fade" data-animation="none" data-align="right">
-									<ul id="main-nav" class="menuzord-menu">
-										<li class="active">
-											<a href="#">Home</a>
-											<ul class="dropdown">
-												<li><a href="index-mp-layout1.html">Multi Layouts </a>
-													<ul class="dropdown">
-														<li><a href="index-mp-layout1.html">Multipage Layout1</a></li>
-														<li><a href="index-mp-layout2.html">Multipage Layout2</a></li>
-													</ul>
-												</li>
-												<li><a href="index-sp-layout1.html">Single Layouts </a>
-													<ul class="dropdown">
-														<li><a href="index-sp-layout1.html">Index Single Layout1</a></li>
-														<li><a href="index-sp-layout2.html">Index Single Layout2</a></li>
-													</ul>
-												</li>
-												<li><a href="index-dark-mp-layout1.html">Dark Layouts </a>
-													<ul class="dropdown">
-														<li><a href="index-dark-mp-layout1.html">Index Dark Layout1</a></li>
-														<li><a href="index-dark-mp-layout2.html">Index Dark Layout2</a></li>
-													</ul>
-												</li>
-												<li><a href="index-boxed-mp-layout1.html">Boxed Layouts </a>
-													<ul class="dropdown">
-														<li><a href="index-boxed-mp-layout1.html">Index Boxed Layout1</a></li>
-														<li><a href="index-boxed-mp-layout2.html">Index Boxed Layout2</a></li>
-													</ul>
-												</li>
-												<li><a href="index-rtl-layout1.html">RTL Layouts </a>
-													<ul class="dropdown">
-														<li><a href="index-rtl-layout1.html">Index RTL Layout1</a></li>
-														<li><a href="index-rtl-layout2.html">Index RTL Layout2</a></li>
-													</ul>
-												</li>
-											</ul>
-										</li>
-										<li><a href="page-about.html">About</a></li>
-										<li><a href="#">Pages</a>
-											<ul class="dropdown">
-												<li><a href="page-team-grid.html">Team Grid</a></li>
-												<li><a href="page-team-details.html">Team Details</a></li>
-												<li><a href="page-gallery.html">Gallery</a>
-												<li><a href="page-testimonial.html">Testimonial</a>
-												<li><a href="page-404.html">404</a>
-											</ul>
-										</li>
-										<li><a href="#">Services</a>
-											<ul class="dropdown">
-												<li><a href="page-services1.html">Services Grid</a></li>
-												<li><a href="page-services-details.html">Services Details</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Blog</a>
-											<ul class="dropdown">
-												<li><a href="news-grid.html">News Grid</a></li>
-												<li><a href="news-details.html">News Details</a></li>
-											</ul>
-										</li>
-										<li><a href="page-contact.html">Contact</a></li>
-									</ul>
-								</nav>
-							</div>
-							<div class="col-sm-auto align-self-center nav-side-icon-parent">
-								<ul class="list-inline nav-side-icon-list">
-									<li class="hidden-mobile-mode"><a href="#" id="top-nav-search-btn"><i class="search-icon fa fa-search"></i></a></li>
-									<li class="hidden-mobile-mode">
-										<div class="top-nav-mini-cart-icon-container">
-											<div class="top-nav-mini-cart-icon-contents">
-												<a class="mini-cart-icon" href="shop-cart.html" title="View your shopping cart"><i class="fa fa-shopping-cart"></i><span class="items-count">1</span> <span class="cart-quick-info">1 item - <span class="amount"><span class="currencySymbol">&pound;</span>18.00</span></span></a>
-												<div class="dropdown-content">
-													<ul class="cart_list product_list_widget ">
-														<li class="mini_cart_item">
-															<a href="#" class="remove remove_from_cart_button" aria-label="Remove this item" data-product_id="18832" data-cart_item_key="#" data-product_sku="woo-beanie">&times;</a>
-															<a href="#"> <img class="attachment-thumbnail" src="https://placehold.it/75x75" width="300" height="300" alt=""/>Beanie</a>
-															<span class="quantity">1 &times; <span class="amount">
-                              <span class="currencySymbol">&pound;</span>18.00</span></span>
-														</li>
-													</ul>
-													<p class="total"> <strong>Subtotal:</strong> <span class="woocommerce-Price-amount amount"><span class="currencySymbol">&pound;</span>18.00</span> </p>
-													<div class="buttons cart-action-buttons">
-														<div class="row">
-															<div class="col-6 pr-1"><a href="shop-cart.html" class="btn btn-theme-colored2 btn-block btn-sm wc-forward">View Cart</a></div>
-															<div class="col-6 pl-1"><a href="shop-checkout.html" class="btn btn-theme-colored1 btn-block btn-sm checkout wc-forward">Checkout</a></div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</li>
-									<li class="hidden-mobile-mode">
-										<div id="side-panel-trigger" class="side-panel-trigger"> <a href="#">
-												<div class="hamburger-box">
-													<div class="hamburger-inner"></div>
-												</div>
-											</a> </div>
-									</li>
-								</ul>
-								<div id="top-nav-search-form" class="clearfix">
-									<form action="#" method="GET">
-										<input type="text" name="s" value="" placeholder="Type and Press Enter..." autocomplete="off" />
-									</form>
-									<a href="#" id="close-search-btn"><i class="fa fa-times"></i></a>
-								</div>
-							</div>
-						</div>
-						<div class="row d-block d-xl-none">
-							<div class="col-12">
-								<nav id="top-primary-nav-clone" class="menuzord d-block d-xl-none default menuzord-color-default menuzord-border-boxed menuzord-responsive" data-effect="slide" data-animation="none" data-align="right">
-									<ul id="main-nav-clone" class="menuzord-menu menuzord-right menuzord-indented scrollable">
-									</ul>
-								</nav>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			{% block header %}
+				{% include "menu.twig" with {'items': menu.get_items} %}
+			{% endblock %}
 		</div>
 	</header>
 	{% block content %}{% endblock %}
@@ -241,17 +117,17 @@
 					<div class="col-md-6 col-lg-6 col-xl-3">
 						<div id="tm_widget_contact_info-1" class="split-nav-menu clearfix widget widget-contact-info clearfix mb-20">
 							<div class="tm-widget tm-widget-contact-info contact-info contact-info-style1  contact-icon-theme-colored1">
-								<h4 class="text-white">About</h4>
-								<p>There are many variatio of lorem ipsum available.</p>
+								<h4 class="text-white">CÔNG TY TNHH ĐIỆN LẠNH PHAN GIA</h4>
+								<p class="d-none">There are many variatio of lorem ipsum available.</p>
 								<div class="footer-contact-address">
 									<div class="phone mb-15">
-										<h6 class="m-0 text-white"><i class="fas fa-phone-alt text-theme-colored1 mr-10"></i>000 888 0000</h6>
+										<h6 class="m-0 text-white"><i class="fas fa-phone-alt text-theme-colored1 mr-10"></i>{{ t_settings.get_phone }}</h6>
 									</div>
 									<div class="email mb-15">
-										<h6 class="m-0 text-white"><i class="fas fa-envelope text-theme-colored1 mr-10"></i>needhelp@masim.com</h6>
+										<h6 class="m-0 text-white"><i class="fas fa-envelope text-theme-colored1 mr-10"></i>{{ t_settings.get_email_address }}</h6>
 									</div>
 									<div class="address">
-										<h6 class="m-0 text-white"><i class="fas fa-map text-theme-colored1 mr-10"></i>80 Broklyn Golden Street, Usa</h6>
+										<h6 class="m-0 text-white"><i class="fas fa-map text-theme-colored1 mr-10"></i>{{ t_settings.get_address }}</h6>
 									</div>
 								</div>
 							</div>
@@ -259,25 +135,25 @@
 					</div>
 					<div class="col-md-6 col-lg-6 col-xl-3">
 						<div id="nav_menu-1" class="widget widget_nav_menu">
-							<h4 class="widget-title">Explore</h4>
+							<h4 class="widget-title">Khám phá</h4>
 							<div class="menu-footer-page-list">
 								<ul id="footer-page-list" class="menu">
-									<li><a href="#">Service</a></li>
-									<li><a href="#">About</a></li>
-									<li><a href="#">Get a Quote</a></li>
-									<li><a href="#">Latest Post</a></li>
-									<li><a href="#/">Success Story</a></li>
-									<li><a href="#">Contact</a></li>
-									<li><a href="#">Help</a></li>
-									<li><a href="#">Privacy Policy</a></li>
-									<li><a href="#">Terms of use</a></li>
+									<li><a href="#">Giới thiệu</a></li>
+									<li><a href="#">Dịch vụ</a></li>
+									<li><a href="#">Công trình</a></li>
+									<li><a href="#">Báo giá</a></li>
+									<li><a href="#">Tin tức</a></li>
+									<li><a href="#">Liên hệ</a></li>
+									<li><a href="#">Hỗ trợ</a></li>
+									{#<li><a href="#">Privacy Policy</a></li>
+									<li><a href="#">Terms of use</a></li>#}
 								</ul>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-6 col-xl-3">
 						<div id="tm_widget_blog_list-1" class="split-nav-menu clearfix widget widget-blog-list clearfix">
-							<h4 class="widget-title mb-40">Latest News</h4>
+							<h4 class="widget-title mb-40">Tin mới nhất</h4>
 							<div class="tm-widget tm-widget-blog-list ">
 								<!-- the loop -->
 								<article class="post media-post clearfix mb-30">
@@ -304,17 +180,17 @@
 					</div>
 					<div class="col-md-6 col-lg-6 col-xl-3">
 						<div class="tm-widget tm-widget-opening-hours tm-widget-opening-hours-compressed opening-hours border-dark">
-							<h4 class="widget-title text-white">Opening Hours</h4>
+							<h4 class="widget-title text-white">Giờ mở cửa</h4>
 							<ul class="opening-hours p-0">
 								<li class="clearfix">
-									<span>Monday - Tuesday</span>
-									<div class="value">9.00 - 17.00</div>
+									<span>Chúng tôi mở cửa vào Thứ 2 đến Thứ 7 hàng tuần</span>
+									<div class="value">8.00 - 17.00</div>
 								</li>
-								<li class="clearfix">
+								<li class="clearfix d-none">
 									<span>Wednesday</span>
 									<div class="value">9.00 - 16.00</div>
 								</li>
-								<li class="clearfix">
+								<li class="clearfix d-none">
 									<span>Thursday - Friday</span>
 									<div class="value">9.00 - 16.00</div>
 								</li>
@@ -329,7 +205,7 @@
 						<div class="col"></div>
 						<div class="col-sm-6">
 							<div class="footer-paragraph text-center">
-								© 2020 ThemeMascot. All Rights Reserved.
+								© 2021 Kenhana. Đã đăng ký bản quyền.
 							</div>
 						</div>
 						<div class="col"></div>

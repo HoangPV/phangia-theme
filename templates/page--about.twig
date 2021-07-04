@@ -1,197 +1,167 @@
-{% extends "base.twig" %}
-{% block content %}
-    <!-- Start main-content -->
-    <div class="main-content-area">
-        <!-- Section: inner-header Start -->
-        <section class="page-title divider layer-overlay overlay-theme-colored2-8 section-typo-light bg-img-center" data-tm-bg-img="{{ post.banner|src ?: 'http://placehold.it/1920x1280' }}">
-            <div class="container pt-90 pb-90">
-                <!-- Section Content -->
-                <div class="section-content">
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <h2 class="title text-white">GIỚI THIỆU</h2>
-                            <nav role="navigation" class="breadcrumb-trail breadcrumbs">
-                                <div class="breadcrumbs">
-                  <span class="trail-item trail-begin">
-                    <a href="{{ site.link }}"><span>Trang chủ</span></a>
-                  </span>
-                                    <span><i class="fa fa-angle-right"></i></span>
-                                    <span class="trail-item"><a href="#"><span>Pages</span></a></span>
-                                    <span><i class="fa fa-angle-right"></i></span>
-                                    <span class="trail-item trail-end text-theme-colored1">Về chúng tôi</span>
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Section: inner-header End -->
+{% extends "page-normal.twig" %}
 
-        <!-- Section: features -->
-        <section class="bg-no-repeat" data-tm-bg-img="images/bg/about-bg2.png">
-            <div class="container">
-                <div class="section-content">
-                    <div class="features-block mb-100 z-index-2 d-none">
-                        <div class="row">
-                            <div class="col-md-6 col-lg-4 col-xl-4">
-                                <div class="feature mb-md-40">
-                                    <div class="feature-content">
-                                        <h5 class="feature-title mt-0 mb-30">{{ post.service_1_title }}</h5>
-                                        <p class="feature-text mb-0">{{ post.description_1 }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-4 col-xl-4">
-                                <div class="feature mb-md-40">
-                                    <div class="feature-content">
-                                        <h5 class="feature-title mt-0 mb-30">{{ post.service_2_title }}</h5>
-                                        <p class="feature-text mb-0">{{ post.description_2 }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-4 col-xl-4">
-                                <div class="feature mb-md-40">
-                                    <div class="feature-content">
-                                        <h5 class="feature-title mt-0 mb-30">{{ post.service_3_title }}</h5>
-                                        <p class="feature-text mb-0">{{ post.description_3 }}</p>
-                                    </div>
-                                </div>
+{% block after_banner %}
+<!-- Section: features -->
+<section class="bg-no-repeat" data-tm-bg-img="images/bg/about-bg2.png">
+    <div class="container">
+        <div class="section-content">
+            <div class="features-block mb-100 z-index-2 d-none">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 col-xl-4">
+                        <div class="feature mb-md-40">
+                            <div class="feature-content">
+                                <h5 class="feature-title mt-0 mb-30">{{ post.service_1_title }}</h5>
+                                <p class="feature-text mb-0">{{ post.description_1 }}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <h2 class="text-center">Công ty TNHH Điện Lạnh PHAN GIA</h2>
-                            <p class="text">{{ post.content }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: Service -->
-        <section class="bg-theme-colored4" data-tm-bg-img="images/bg/service-bg1.png">
-            <div class="container pt-100 pb-100">
-                <div class="section-title">
-                    <div class="row justify-content-md-center">
-                        <div class="col-md-6">
-                            <div class="text-center mb-60">
-                                <div class="tm-sc-section-title section-title">
-                                    <div class="title-wrapper">
-                                        <h2 class="text-white">Dịch vụ</h2>
-                                    </div>
-                                </div>
+                    <div class="col-md-6 col-lg-4 col-xl-4">
+                        <div class="feature mb-md-40">
+                            <div class="feature-content">
+                                <h5 class="feature-title mt-0 mb-30">{{ post.service_2_title }}</h5>
+                                <p class="feature-text mb-0">{{ post.description_2 }}</p>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="section-content">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6 col-lg-4 col-xl-4">
-                                <div class="service-item">
-                                    <div class="service-thumb">
-                                        <img src="http://placehold.it/375x325" alt="">
-                                    </div>
-                                    <div class="service-content">
-                                        <h3 class="text-white service-title">{{ post.service_1_title }}</h3>
-                                        <p class="service-text mb-0">Lorem ipsum is simply free text dolor sit am adipi we help you everyone is in the right jobs sicing elit.</p>
-                                    </div>
-                                    <a class="service-link text-theme-colored2" href="#">Read more</a>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-4 col-xl-4">
-                                <div class="service-item">
-                                    <div class="service-thumb">
-                                        <img src="http://placehold.it/375x325" alt="">
-                                    </div>
-                                    <div class="service-content">
-                                        <h3 class="text-white service-title">{{ post.service_2_title }}</h3>
-                                        <p class="service-text mb-0">Lorem ipsum is simply free text dolor sit am adipi we help you everyone is in the right jobs sicing elit.</p>
-                                    </div>
-                                    <a class="service-link text-theme-colored2" href="#">Read more</a>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-4 col-xl-4">
-                                <div class="service-item">
-                                    <div class="service-thumb">
-                                        <img src="http://placehold.it/375x325" alt="">
-                                    </div>
-                                    <div class="service-content">
-                                        <h3 class="text-white service-title">{{ post.service_3_title }}</h3>
-                                        <p class="service-text mb-0">Lorem ipsum is simply free text dolor sit am adipi we help you everyone is in the right jobs sicing elit.</p>
-                                    </div>
-                                    <a class="service-link text-theme-colored2" href="#">Read more</a>
-                                </div>
+                    <div class="col-md-6 col-lg-4 col-xl-4">
+                        <div class="feature mb-md-40">
+                            <div class="feature-content">
+                                <h5 class="feature-title mt-0 mb-30">{{ post.service_3_title }}</h5>
+                                <p class="feature-text mb-0">{{ post.description_3 }}</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Section: Subscribe Newsletter -->
-        <section class="bg-silver-light">
-            <div class="container">
-                <div class="section-content">
-                    <div class="row">
-                        <div class="col-md-12 col-lg-5 col-xl-3">
-                            <div class="subscribe-block mb-md-80">
-                                <div class="subscribe-icon">
-                                    <img src="images/subscribe-icon.png" alt="">
-                                </div>
-                                <h4 class="subscribe-text">Đăng ký nhận tin qua Email</h4>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-lg-7 col-xl-6">
-                            <!-- Mailchimp Subscription Form-->
-                            <form id="mailchimp-subscription-form1" class="newsletter-form mb-lg-40 pl-md-0">
-                                <label for="mce-EMAIL"></label>
-                                <div class="input-group">
-                                    <input type="email" id="mce-EMAIL" data-tm-height="80px" class="form-control" placeholder="Địa chỉ Email"  name="EMAIL" value="">
-                                    <div class="input-group-append tm-sc-button">
-                                        <button type="submit" class="newsletter-btn btn btn-theme-colored1 btn-sm text-white" data-tm-height="65px">Đăng ký</button>
-                                    </div>
-                                </div>
-                            </form>
-
-                            <!-- Mailchimp Subscription Form Validation-->
-                            <script>
-                                (function($) {
-                                    $('#mailchimp-subscription-form1').ajaxChimp({
-                                        callback: mailChimpCallBack,
-                                        url: '//thememascot.us9.list-manage.com/subscribe/post?u=a01f440178e35febc8cf4e51f&amp;id=49d6d30e1e'
-                                    });
-
-                                    function mailChimpCallBack(resp) {
-                                        // Hide any previous response text
-                                        var $mailchimpform = $('#mailchimp-subscription-form1'),
-                                            $response = '';
-                                        $mailchimpform.children(".alert").remove();
-                                        if (resp.result === 'success') {
-                                            $response = '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
-                                        } else if (resp.result === 'error') {
-                                            $response = '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
-                                        }
-                                        $mailchimpform.prepend($response);
-                                    }
-                                })(jQuery);
-                            </script>
-                        </div>
-                        <div class="col-md-12 col-lg-5 col-xl-3">
-                            <ul class="styled-icons icon-dark icon-lg icon-circled icon-theme-colored2 text-left text-xl-right">
-                                <li><a class="social-link" href="{{ t_settings.get_facebook }}"><i class="fab fa-facebook"></i></a></li>
-                                <li><a class="social-link" href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a class="social-link" href="#"><i class="fab fa-youtube"></i></a></li>
-                                <li><a class="social-link" href="#"><i class="fab fa-instagram"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
+            <div class="row">
+                <div class="col">
+                    <h2 class="text-center">Công ty TNHH Điện Lạnh PHAN GIA</h2>
+                    <p class="text">{{ post.content }}</p>
                 </div>
             </div>
-        </section>
-
+        </div>
     </div>
-    <!-- end main-content -->
+</section>
+
+<!-- Section: Service -->
+<section class="bg-theme-colored4" data-tm-bg-img="images/bg/service-bg1.png">
+    <div class="container pt-100 pb-100">
+        <div class="section-title">
+            <div class="row justify-content-md-center">
+                <div class="col-md-6">
+                    <div class="text-center mb-60">
+                        <div class="tm-sc-section-title section-title">
+                            <div class="title-wrapper">
+                                <h2 class="text-white">Dịch vụ</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 col-xl-4">
+                        <div class="service-item">
+                            <div class="service-thumb">
+                                <img src="http://placehold.it/375x325" alt="">
+                            </div>
+                            <div class="service-content">
+                                <h3 class="text-white service-title">{{ post.service_1_title }}</h3>
+                                <p class="service-text mb-0">Lorem ipsum is simply free text dolor sit am adipi we help you everyone is in the right jobs sicing elit.</p>
+                            </div>
+                            <a class="service-link text-theme-colored2" href="#">Read more</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-4">
+                        <div class="service-item">
+                            <div class="service-thumb">
+                                <img src="http://placehold.it/375x325" alt="">
+                            </div>
+                            <div class="service-content">
+                                <h3 class="text-white service-title">{{ post.service_2_title }}</h3>
+                                <p class="service-text mb-0">Lorem ipsum is simply free text dolor sit am adipi we help you everyone is in the right jobs sicing elit.</p>
+                            </div>
+                            <a class="service-link text-theme-colored2" href="#">Read more</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-4">
+                        <div class="service-item">
+                            <div class="service-thumb">
+                                <img src="http://placehold.it/375x325" alt="">
+                            </div>
+                            <div class="service-content">
+                                <h3 class="text-white service-title">{{ post.service_3_title }}</h3>
+                                <p class="service-text mb-0">Lorem ipsum is simply free text dolor sit am adipi we help you everyone is in the right jobs sicing elit.</p>
+                            </div>
+                            <a class="service-link text-theme-colored2" href="#">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section: Subscribe Newsletter -->
+<section class="bg-silver-light">
+    <div class="container">
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12 col-lg-5 col-xl-3">
+                    <div class="subscribe-block mb-md-80">
+                        <div class="subscribe-icon">
+                            <img src="images/subscribe-icon.png" alt="">
+                        </div>
+                        <h4 class="subscribe-text">Đăng ký nhận tin qua Email</h4>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-7 col-xl-6">
+                    <!-- Mailchimp Subscription Form-->
+                    <form id="mailchimp-subscription-form1" class="newsletter-form mb-lg-40 pl-md-0">
+                        <label for="mce-EMAIL"></label>
+                        <div class="input-group">
+                            <input type="email" id="mce-EMAIL" data-tm-height="80px" class="form-control" placeholder="Địa chỉ Email"  name="EMAIL" value="">
+                            <div class="input-group-append tm-sc-button">
+                                <button type="submit" class="newsletter-btn btn btn-theme-colored1 btn-sm text-white" data-tm-height="65px">Đăng ký</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Mailchimp Subscription Form Validation-->
+                    <script>
+                        (function($) {
+                            $('#mailchimp-subscription-form1').ajaxChimp({
+                                callback: mailChimpCallBack,
+                                url: '//thememascot.us9.list-manage.com/subscribe/post?u=a01f440178e35febc8cf4e51f&amp;id=49d6d30e1e'
+                            });
+
+                            function mailChimpCallBack(resp) {
+                                // Hide any previous response text
+                                var $mailchimpform = $('#mailchimp-subscription-form1'),
+                                    $response = '';
+                                $mailchimpform.children(".alert").remove();
+                                if (resp.result === 'success') {
+                                    $response = '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
+                                } else if (resp.result === 'error') {
+                                    $response = '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
+                                }
+                                $mailchimpform.prepend($response);
+                            }
+                        })(jQuery);
+                    </script>
+                </div>
+                <div class="col-md-12 col-lg-5 col-xl-3">
+                    <ul class="styled-icons icon-dark icon-lg icon-circled icon-theme-colored2 text-left text-xl-right">
+                        <li><a class="social-link" href="{{ t_settings.get_facebook }}"><i class="fab fa-facebook"></i></a></li>
+                        <li><a class="social-link" href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a class="social-link" href="#"><i class="fab fa-youtube"></i></a></li>
+                        <li><a class="social-link" href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

@@ -1,39 +1,190 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div class="content-wrapper">
-		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-			<img src="{{ post.thumbnail.src|resize(1200, 300) }}">
-			<section class="article-content">
-				<h1 class="article-h1">{{ post.title }}</h1>
-				<a href="{{ post.link }}">{{ _e('edit') }}</a>
-				<p class="blog-author">
-					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> <time datetime="{{ post.date|date('Y-m-d H:i:s') }}">{{ post.date }}</time>
-				</p>
-				<div class="article-body">
-					{{post.content}}
+	<!-- Start main-content -->
+	<div class="main-content-area">
+		<!-- Section: inner-header Start -->
+		<section class="page-title divider layer-overlay overlay-theme-colored2-8 section-typo-light bg-img-center" data-tm-bg-img="http://placehold.it/1920x1280">
+			<div class="container pt-90 pb-90">
+				<!-- Section Content -->
+				<div class="section-content">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<h2 class="title text-white">News Details</h2>
+							<nav role="navigation" class="breadcrumb-trail breadcrumbs">
+								<div class="breadcrumbs">
+                  <span class="trail-item trail-begin">
+                    <a href="#"><span>Home</span></a>
+                  </span>
+									<span><i class="fa fa-angle-right"></i></span>
+									<span class="trail-item"><a href="#"><span>Pages</span></a></span>
+									<span><i class="fa fa-angle-right"></i></span>
+									<span class="trail-item trail-end text-theme-colored1">News Details</span>
+								</div>
+							</nav>
+						</div>
+					</div>
 				</div>
-			</section>
+			</div>
+		</section>
+		<!-- Section: inner-header End -->
 
-			<!-- comment box -->
-			<section class="comment-box">
-				<!-- comments -->
-				<div class="comments">
-				    {% if post.comments %}
-					<h3> comments </h3>
-					{% for cmt in post.comments %}
-					    {% include "comment.twig" with {comment:cmt} %}
-					{% endfor %}
-				    {% endif %}
+		<section>
+			<div class="container pb-60">
+				<div class="section-content">
+					<div class="row">
+						<div class="col-sm-9">
+							<article class="post-single">
+								<div class="entry-header mb-30">
+									<div class="post-thumb thumb"> <img class="img-fullwidth" src="http://placehold.it/1920x1280" alt=""></div>
+								</div>
+								<div class="entry-content">
+									{{post.content}}
+								</div>
+							</article>
+
+							<div class="comment-box mt-30">
+								<h3>Bình luận</h3>
+								<form role="form" id="comment-form">
+									<div class="row">
+										<div class="col-6 pt-0 pb-0">
+											<div class="form-group">
+												<input type="text" class="form-control" required name="contact_name" id="contact_name" placeholder="Họ tên">
+											</div>
+											<div class="form-group">
+												<input type="text" required class="form-control" name="contact_email2" id="contact_email2" placeholder="Địa chỉ Email">
+											</div>
+											<div class="form-group">
+												<input type="text" placeholder="Enter Website" required class="form-control" name="subject">
+											</div>
+										</div>
+										<div class="col-6">
+											<div class="form-group">
+												<textarea class="form-control" required name="contact_message2" id="contact_message2"  placeholder="Tin nhắn" rows="7"></textarea>
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="form-group">
+												<button type="submit" class="btn btn-theme-colored1 btn-round m-0" data-loading-text="Please wait...">Gửi</button>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="col-lg-3 sidebar-area sidebar-right">
+							<div class=" split-nav-menu clearfix widget widget_search">
+								<form role="search" method="get" class="search-form" action="#">
+									<input type="search" class="form-control search-field" placeholder="Tìm kiếm …" value="" name="s">
+									<button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
+								</form>
+							</div>
+							<div class="widget widget-blog-list clearfix">
+								<h4 class="widget-title widget-title-line-bottom line-bottom-theme-colored1">Tin tức mới nhất</h4>
+								<div class="tm-widget tm-widget-blog-list ">
+									<article class="post media-post clearfix">
+										<a class="post-thumb" href="#">
+											<img src="http://placehold.it/95x95" class="" alt="">
+										</a>
+										<div class="post-right">
+											<h6 class="post-title"> <a href="#"> Inspired by The Lord </a></h6>
+											<span class="post-date">
+                        <span class="entry-date">February 2, 2020</span>
+                      </span>
+										</div>
+									</article>
+									<article class="post media-post clearfix">
+										<a class="post-thumb" href="#">
+											<img src="http://placehold.it/95x95" class="" alt="">
+										</a>
+										<div class="post-right">
+											<h6 class="post-title"> <a href="#">Randomized Trial </a></h6>
+											<span class="post-date">
+                        <span class="entry-date">February 2, 2020</span>
+                      </span>
+										</div>
+									</article>
+									<article class="post media-post clearfix">
+										<a class="post-thumb" href="#">
+											<img src="http://placehold.it/95x95" class="" alt="">
+										</a>
+										<div class="post-right">
+											<h6 class="post-title"> <a href="#">Multilevel Lord</a></h6>
+											<span class="post-date">
+                        <span class="entry-date">February 2, 2021</span>
+                      </span>
+										</div>
+									</article>
+									<article class="post media-post clearfix">
+										<a class="post-thumb" href="#">
+											<img src="http://placehold.it/95x95" class="" alt="">
+										</a>
+										<div class="post-right">
+											<h6 class="post-title"> <a href="#">Having studied</a></h6>
+											<span class="post-date">
+                        <span class="entry-date">February 2, 2019</span>
+                      </span>
+										</div>
+									</article>
+								</div>
+							</div>
+							<div class="widget widget_categories">
+								<h4 class="widget-title widget-title-line-bottom line-bottom-theme-colored1">Categories</h4>
+								<ul>
+									<li class="cat-item cat-item-16"><a href="#">Admission</a></li>
+									<li class="cat-item cat-item-17"><a href="#">Cultural Program</a></li>
+									<li class="cat-item cat-item-18"><a href="#">Result</a></li>
+								</ul>
+							</div>
+							<div class=" split-nav-menu clearfix widget widget_text">
+								<div class="textwidget">
+									<div class="section-typo-light text-center bg-theme-colored1 mb-md-40 p-30 pt-40 pb-40">
+										<p><img class="size-full wp-image-800 aligncenter" src="images/headphone-128.png" alt="" width="128" height="128"></p>
+										<h4>Online Help!</h4>
+										<h5>+(123) 456-7890</h5>
+									</div>
+								</div>
+							</div>
+							<div class=" split-nav-menu clearfix widget widget_text">
+								<div class="textwidget">
+									<div class="section-typo-light bg-theme-colored1 mb-md-40 p-30 pt-40 pb-40">
+										<p>Competently parallel task fully researched data and enterprise process improvements.</p>
+										<div class="tm-sc-button"> <a href="" target="_self" class="btn btn-dark btn-theme-colored3-sm btn-xs btn-round" rel="noopener noreferrer">Download PDF <i class="fa fa-file-pdf-o"></i></a></div>
+									</div>
+								</div>
+							</div>
+							<div class=" split-nav-menu clearfix widget widget-brochure-box clearfix"><a class="tm-widget tm-widget-brochure-box tm-widget-brochure-box-default brochure-box brochure-box-default  brochure-box-theme-colored1 mb-10" href="#"> <i class="brochure-icon fa fa-download"></i>
+									<h5 class="text">Registration</h5>
+								</a></div>
+						</div>
+					</div>
 				</div>
+			</div>
+		</section>
+		<!-- Section: About End -->
 
-				{% if post.comment_status == "closed" %}
-					<p> comments for this post are closed </p>
-				{% else %}
-				    <!-- comment form -->
-				    {% include "comment-form.twig" %}
-				{% endif %}
-			</section>
-		</article>
-	</div><!-- /content-wrapper -->
+		<!-- Start Divider -->
+		<section class="bg-silver-light">
+			<div class="container">
+				<div class="section-content">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="tm-sc-clients tm-sc-clients-carousel owl-dots-light-skin owl-dots-center clients-animation-grayscale">
+								<div class="owl-carousel owl-theme tm-owl-carousel-6col" data-autoplay="true" data-loop="true" data-duration="6000" data-smartspeed="300" data-margin="30" data-stagepadding="0" data-laptop="4">
+									<div class="item"> <a target="_blank" href="#"> <img src='images/clients/1.png' alt='Image' /> </a></div>
+									<div class="item"> <a target="_blank" href="#"> <img src='images/clients/2.png' alt='Image' /> </a></div>
+									<div class="item"> <a target="_blank" href="#"> <img src='images/clients/3.png' alt='Image' /> </a></div>
+									<div class="item"> <a target="_blank" href="#"> <img src='images/clients/4.png' alt='Image' /> </a></div>
+									<div class="item"> <a target="_blank" href="#"> <img src='images/clients/5.png' alt='Image' /> </a></div>
+									<div class="item"> <a target="_blank" href="#"> <img src='images/clients/6.png' alt='Image' /> </a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Divider -->
+	</div>
+	<!-- end main-content -->
 {% endblock %}

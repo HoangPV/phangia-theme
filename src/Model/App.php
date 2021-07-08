@@ -25,6 +25,8 @@ class App extends \Timber\Site {
 	 */
 	protected $version;
 
+	//protected $image_size;
+
 	/**
 	 * App constructor.
 	 */
@@ -67,8 +69,8 @@ class App extends \Timber\Site {
 	 * @return array
 	 */
 	public function add_to_context( $context ) {
-		$context['menu']  = new \Timber\Menu();
-		//d($context['menu']);die;
+		$context['menu']  = new \Timber\Menu('primary-menu');
+		$context['footer_menu'] = new \Timber\Menu('footer-menu');
 		$context['site']  = $this;
 		//$context['html_extra_class'] = 'no-mobile nivo-lightbox-notouch';
 		$context['html_extra_class'] = '';
@@ -138,12 +140,45 @@ class App extends \Timber\Site {
 	public function add_to_twig( $twig ) {
 		$twig->addExtension( new \Twig\Extension\StringLoaderExtension() );
 		$twig->addFilter(new \Twig\TwigFilter('t', [$this, 'trans']));
-		$function = new \Twig\TwigFunction('should_active', function (\Timber\MenuItem $item, \Timber\Post $post) {
-			return $item->url == $post->get_permalink();
+		$twig->addFilter(new \Twig\TwigFilter('src', [$this, 'get_image_url']));
+		$function_debug = new \Twig\TwigFunction('debug', function($xx) {
+			//var_dump($xx);die;
+		});
+		$twig->addFilter(new \Twig\TwigFilter('src_banner', [$this, 'get_image_banner_url']));
+		$twig->addFilter(new \Twig\TwigFilter('src_video_popup', [$this, 'get_video_popup_image_banner_url']));
+		//$twig->addFilter(new \Twig\TwigFilter('src_bg_why_us', [$this, 'get_image_for_block_why_us']));
+		$twig->addFunction($function_debug);
+		$function = new \Twig\TwigFunction('should_active', function (\Timber\MenuItem $item,  $post) {
+			if ($post instanceof \Timber\Post) {
+				return $item->url == $post->get_permalink();
+			}
+			return false;
 		});
 		$twig->addFunction($function);
 		return $twig;
 	}
+
+	public function get_image_url($id) {
+		//$html = wp_get_attachment_image_src( $id, null, false);
+		$html = wp_get_attachment_image_src( $id, null, false);
+		//var_dump($html);
+		return $html[0];
+	}
+
+	public function get_image_banner_url($id) {
+		$html = wp_get_attachment_image_src( $id, [1920,1280], false);
+		return $html[0];
+	}
+
+	public function get_video_popup_image_banner_url($id) {
+		$html = wp_get_attachment_image_src( $id, [1919,727], false);
+		return $html[0];
+	}
+
+//	public function get_image_for_block_why_us($id) {
+//		$html = wp_get_attachment_image_src( $id, [1920,1280], false);
+//		return $html[0];
+//	}
 
 	/**
 	 * @return void
@@ -158,6 +193,7 @@ class App extends \Timber\Site {
 	 */
 	private function define_admin_hooks() {
 		$admin = new \Kenhana\PgTheme\Adminhtml\Main_App( $this->identifier, $this->version );
+//		$this->loader->add_action('admin_menu', $admin, 'remove_menu_links');
 		//$this->loader->add_action( 'admin_enqueue_styles', $admin, 'enqueue_styles' );
 		//$this->loader->add_action( 'admin_enqueue_scripts', $admin, 'enqueue_scripts' );
 	}

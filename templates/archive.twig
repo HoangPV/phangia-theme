@@ -1,9 +1,160 @@
-{# This file demonstrates using most of the index.twig template and modifying 
+{# This file demonstrates using most of the index.twig template and modifying
    just a small part. See `search.twig` for an example of another approach #}
 
 {% extends "index.twig" %}
 
 {% block content %}
-  <h3>This is my archive</h3>
-  {{ parent() }}
+
+  {#<h3>This is my archive classic 2 sidebar</h3>#}
+  <section class="page-title divider layer-overlay overlay-theme-colored2-8 section-typo-light bg-img-center" data-tm-bg-img="{{ category_banner ?: 'http://placehold.it/1920x1280' }}">
+    <div class="container pt-90 pb-90">
+      <!-- Section Content -->
+      <div class="section-content">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="title text-white">Services</h2>
+            <nav role="navigation" class="breadcrumb-trail breadcrumbs">
+              <div class="breadcrumbs">
+                  <span class="trail-item trail-begin">
+                    <a href="#"><span>Home</span></a>
+                  </span>
+                <span><i class="fa fa-angle-right"></i></span>
+                <span class="trail-item"><a href="#"><span>Pages</span></a></span>
+                <span><i class="fa fa-angle-right"></i></span>
+                <span class="trail-item trail-end text-theme-colored1">Services</span>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container mt-30 mb-30 pt-30 pb-30">
+      <div class="row">
+        <div class="col-md-6 order-lg-2">
+          <div class="blog-posts">
+            {% for post in posts %}
+              {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+            {% endfor %}
+            <nav>
+              <ul class="pagination">
+                <li class="page-item"><a class="next page-link" href="#">«</a></li>
+                <li class="page-item active"><span class="page-link">1</span></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="next page-link" href="#">»</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="col-md-3 order-lg-1">
+          <div class="sidebar sidebar-left mt-sm-30">
+            <div class="widget widget_categories">
+              <h4 class="widget-title widget-title-line-bottom line-bottom-theme-colored1">Categories</h4>
+              <ul>
+                {% if categories %}
+                  {% for category in categories %}
+                    <li class="cat-item"><a href="#">{{ category.name }}</a> </li>
+                  {% endfor %}
+                {% endif %}
+
+
+              </ul>
+            </div>
+            <div class="widget widget_tag_cloud">
+              <h4 class="widget-title widget-title-line-bottom line-bottom-theme-colored1">Tags</h4>
+              <div class="tagcloud">
+                <a href="#" class="tag-cloud-link">health</a>
+                <a href="#" class="tag-cloud-link">medical</a>
+                <a href="#" class="tag-cloud-link">news</a>
+                <a href="#" class="tag-cloud-link">latest</a>
+              </div>
+            </div>
+            <div class="widget widget_text text-center">
+              <div class="textwidget">
+                <div class="section-typo-light bg-theme-colored1 mb-md-40 p-30 pt-40 pb-40"> <img class="size-full wp-image-800 aligncenter" src="images/headphone-128.png" alt="images" width="128" height="128">
+                  <h4>Online Help!</h4>
+                  <h5>+(123) 456-78-90</h5>
+                </div>
+              </div>
+            </div>
+            <div class="widget widget-brochure-box clearfix">
+              <a class="brochure-box brochure-box-theme-colored1" href="#">
+                <i class="far fa-file-word brochure-icon"></i>
+                <h5 class="text">Download PDF</h5>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 order-lg-3">
+          <div class="sidebar sidebar-right mt-sm-30">
+            <div class="widget">
+              <h5 class="widget-title">Search box</h5>
+              <div class="search-form">
+                <form>
+                  <div class="input-group">
+                    <input type="text" placeholder="Click to Search" class="form-control search-input">
+                    <button type="submit" class="btn btn-theme-colored1 search-button"><i class="fa fa-search"></i></button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="widget">
+              <h4 class="widget-title widget-title-line-bottom line-bottom-theme-colored1">Latest News</h4>
+              <div class="latest-posts">
+                <article class="post clearfix pb-0 mb-20">
+                  <a class="post-thumb" href="#"><img src="images/shop/portfolio-sq1.jpg" alt="images"></a>
+                  <div class="post-right">
+                    <h5 class="post-title mt-0"><a href="#">Sustainable Construction</a></h5>
+                    <span class="post-date">
+                        <time class="entry-date" datetime="2021-05-15T06:10:26+00:00">April 15, 2021</time>
+                      </span>
+                  </div>
+                </article>
+                <article class="post clearfix pb-0 mb-20">
+                  <a class="post-thumb" href="#"><img src="images/shop/portfolio-sq2.jpg" alt="images"></a>
+                  <div class="post-right">
+                    <h5 class="post-title mt-0"><a href="#">Industrial Coatings</a></h5>
+                    <span class="post-date">
+                        <time class="entry-date" datetime="2021-05-15T06:10:26+00:00">April 15, 2021</time>
+                      </span>
+                  </div>
+                </article>
+                <article class="post clearfix pb-0 mb-20">
+                  <a class="post-thumb" href="#"><img src="images/shop/portfolio-sq3.jpg" alt="images"></a>
+                  <div class="post-right">
+                    <h5 class="post-title mt-0"><a href="#">Storefront Installations</a></h5>
+                    <span class="post-date">
+                        <time class="entry-date" datetime="2021-05-15T06:10:26+00:00">April 15, 2021</time>
+                      </span>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="widget widget_archive d-none">
+              <h4 class="widget-title widget-title-line-bottom line-bottom-theme-colored1">Archives</h4>
+              <ul>
+                <li><a href="#">October 2021</a></li>
+                <li><a href="#">February 2021</a></li>
+              </ul>
+            </div>
+            <div class="widget widget_meta d-none">
+              <h4 class="widget-title widget-title-line-bottom line-bottom-theme-colored1">Meta</h4>
+              <ul>
+                <li><a href="#">Site Admin</a></li>
+                <li><a href="#">Log out</a></li>
+                <li><a href="#">Entries feed</a></li>
+                <li><a href="#">Comments feed</a></li>
+                <li><a href="#">WordPress.org</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
 {% endblock %}

@@ -1,8 +1,31 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<h2>{{ foo }}</h2>
-	<p>{{ qux }}</p>
+
+	<section class="page-title divider layer-overlay overlay-theme-colored2-8 section-typo-light bg-img-center" data-tm-bg-img="{{ category_banner }}">
+		<div class="container pt-90 pb-90">
+			<!-- Section Content -->
+			<div class="section-content">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<h2 class="title text-white">Services</h2>
+						<nav role="navigation" class="breadcrumb-trail breadcrumbs">
+							<div class="breadcrumbs">
+                  <span class="trail-item trail-begin">
+                    <a href="#"><span>Home</span></a>
+                  </span>
+								<span><i class="fa fa-angle-right"></i></span>
+								<span class="trail-item"><a href="#"><span>Pages</span></a></span>
+								<span><i class="fa fa-angle-right"></i></span>
+								<span class="trail-item trail-end text-theme-colored1">Services</span>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	{% for post in posts %}
 		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
 	{% endfor %}

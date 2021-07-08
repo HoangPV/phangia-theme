@@ -14,6 +14,7 @@ class Translation {
 	 * Load the plugin text domain for translation.
 	 */
 	public function load_plugin_textdomain() {
+
 		load_plugin_textdomain(
 			$this->domain,
 			false,
@@ -23,8 +24,11 @@ class Translation {
 
 	/**
 	 * @param $domain
+	 *
+	 * @return $this
 	 */
 	public function set_domain( $domain ) {
 		$this->domain = $domain;
+		return $this;
 	}
 }

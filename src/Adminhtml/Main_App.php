@@ -45,4 +45,14 @@ class Main_App {
 	public function enqueue_scripts() {
 		//wp_enqueue_script( $this->name, plugin_dir_url( __FILE__ ) . 'js/admin.js', [ 'jquery' ], $this->version, false );
 	}
+
+	public function remove_menu_links() {
+		global $submenu;
+		// Remove media for non-admins
+//		if( !current_user_can('manage_options') )
+//		{
+//			remove_menu_page('upload.php');
+//		}
+//		d($submenu);die;
+	}
 }
